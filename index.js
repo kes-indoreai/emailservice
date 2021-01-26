@@ -112,6 +112,7 @@ app.post('/contactus', (req, res) => {
         mailDetails.to = row;
         mailTransporter.sendMail(mailDetails, function(err, data) { 
             if(err) { 
+		    console.error(err);
                 res.json({
                     status: 500,
                     message: "Internal server error!."
