@@ -16,11 +16,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(cors());
 const router = express.Router();
-app.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
-});
+
 app.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 app.post('/contactus', (req, res) => {
     let reqObj = req.body;
